@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo de Rosas Amarillas</title>
+    <title>Para Ti 🌹</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,373 +14,391 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        :root {
+            --color-bg: linear-gradient(to top, #00d4ff, #000); 
+            --line-color: linear-gradient(to left top, #82ff86 20%, #144425, #104e1c);
+            --flower-center: radial-gradient(circle, #000, #ff5e00);
+            --leaf-color: radial-gradient(circle, #82ff86, #104e1c);
+            --petal-color: radial-gradient(circle, #ff5e00, #ffbb00);
+        }
+        
         body {
-            background: #0a0a2a;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #fff;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 5px),
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 10px);
-            background-size: 550px 550px, 350px 350px, 250px 250px;
-            background-position: 0 0, 40px 60px, 130px 270px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header y navegación */
-        header {
-            padding: 20px 0;
-            position: relative;
-            z-index: 10;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #ffeb3b, #ff9800);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #ffeb3b;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 90vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
+            padding: 20px;
+            overflow-x: hidden;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .container {
+            max-width: 800px;
             width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(58, 12, 163, 0.4) 0, rgba(10, 10, 42, 0) 50%);
         }
         
-        .hero h1 {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #ffeb3b, #ff9800, #ffeb3b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 700px;
+        .dedication-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             margin-bottom: 30px;
-            color: #d0d0ff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #ffdd00;
+            text-shadow: 0 0 15px rgba(255, 221, 0, 0.6);
+        }
+        
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #e2e2e2;
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(45deg, #ffeb3b, #ff9800);
-            color: #0a0a2a;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ffdd00, #ffb700);
+            color: #1a1a2e;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.4s;
+            box-shadow: 0 5px 15px rgba(255, 221, 0, 0.4);
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
         }
         
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(255, 235, 59, 0.7);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 221, 0, 0.6);
         }
         
-        /* Sección de contenido */
-        .content-section {
-            padding: 100px 0;
+        .flower-section {
+            display: none;
+            padding: 40px 0;
         }
         
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            background: linear-gradient(45deg, #ffeb3b, #ff9800);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Estilo mejorado para la flor */
+        .flower_wrapper {
+            position: relative;
+            margin: 0 auto;
+            width: 300px;
+            height: 400px;
         }
         
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+        .flower_stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 0;
+            background-image: var(--line-color);
+            border-radius: 6px;
+            transition: height 2s ease-in-out;
+            z-index: 1;
         }
         
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+        .flower_center {
+            position: absolute;
+            top: 105px;
+            left: 50%;
+            z-index: 5;
+            transform: translateX(-50%) scale(0);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--flower-center);
+            opacity: 0;
+            transition: all 2s ease-in-out;
+        }
+        
+        .flower_petal {
+            position: absolute;
+            left: 50%;
+            z-index: 3;
+            top: 40px;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 105px;
+            background: var(--petal-color);
+            clip-path: ellipse(50% 50% at 50% 50%);
+            transform-origin: center bottom;
+            opacity: 0;
+            transition: all 2s ease-in-out;
+        }
+        
+        .flower_petal-1 {
+            border-radius: 50% 50% 50% / 80% 80% 20% 20%;
+            background: var(--petal-color);
+        }
+        
+        .flower_petal-2 { transform: translateX(-50%) rotate(-30deg); }
+        .flower_petal-3 { transform: translateX(-50%) rotate(-60deg); }
+        .flower_petal-4 { transform: translateX(-50%) rotate(-90deg); }
+        .flower_petal-5 { transform: translateX(-50%) rotate(-120deg); }
+        .flower_petal-6 { transform: translateX(-50%) rotate(-150deg); }
+        .flower_petal-7 { transform: translateX(-50%) rotate(30deg); }
+        .flower_petal-8 { transform: translateX(-50%) rotate(60deg); }
+        .flower_petal-9 { transform: translateX(-50%) rotate(90deg); }
+        .flower_petal-10 { transform: translateX(-50%) rotate(120deg); }
+        .flower_petal-11 { transform: translateX(-50%) rotate(150deg); }
+        .flower_petal-12 { transform: translateX(-50%) rotate(180deg); }
+        
+        .flower_leaf {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 25px;
+            background: var(--leaf-color);
+            border-radius: 20px 5px 20px 5px;
+            transform-origin: center bottom;
+            opacity: 0;
+            transition: all 2s ease-in-out;
+            z-index: 2;
+        }
+        
+        .flower_leaf-1 {
+            bottom: 90px;
+            transform: translateX(-45%) rotate(80deg);
+        }
+        
+        .flower_leaf-2 {
+            bottom: 140px;
+            transform: translateX(-55%) rotate(-80deg);
+        }
+        
+        .flower_light {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: rgb(255, 251, 0);
+            border-radius: 50%;
+            filter: blur(1px);
+            opacity: 0;
+        }
+        
+        .poem {
+            background: rgba(0, 0, 0, 0.5);
             padding: 30px;
-            text-align: center;
-            transition: transform 0.3s;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 235, 59, 0.1);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(255, 235, 59, 0.2);
-        }
-        
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            color: #ffeb3b;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Galería de rosas */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-        }
-        
-        .gallery-item {
-            height: 250px;
             border-radius: 15px;
-            overflow: hidden;
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1.5s ease-in-out;
+            font-style: italic;
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 30px auto 0;
             position: relative;
         }
         
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
+        .poem:before {
+            content: "“";
+            font-size: 4rem;
+            color: #ffdd00;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            opacity: 0.3;
         }
         
-        .gallery-item:hover img {
-            transform: scale(1.1);
+        .show {
+            display: block;
         }
         
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 100px;
+        .grow-stem {
+            height: 250px;
         }
         
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .show-center {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
         }
         
-        .social-links {
-            display: flex;
-            gap: 20px;
-            margin: 20px 0;
+        .show-petals .flower_petal {
+            opacity: 1;
         }
         
-        .social-links a {
-            color: #ffeb3b;
-            font-size: 1.5rem;
-            transition: transform 0.3s;
+        .show-leaves .flower_leaf {
+            opacity: 1;
         }
         
-        .social-links a:hover {
-            transform: translateY(-5px);
+        .reveal-poem {
+            opacity: 1;
+            transform: translateY(0);
         }
         
-        /* Efectos de partículas (rosas) */
-        .particles {
+        .stars {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
+            z-index: -1;
         }
         
-        .particle {
+        .star {
             position: absolute;
-            color: #ffeb3b;
-            font-size: 24px;
-            opacity: 0.5;
-            animation: float 20s infinite linear;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
         }
         
-        @keyframes float {
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes light-anim {
             0% {
-                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+                transform: translateY(0);
+            }
+            25% {
+                opacity: 1;
+                transform: translateY(-20px) translateX(-5px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-40px) translateX(5px);
+            }
+            75% {
+                transform: translateY(-60px) translateX(-5px);
             }
             100% {
-                transform: translateY(-100px) rotate(360deg);
+                transform: translateY(-80px);
+                opacity: 0;
             }
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
             }
             
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero p {
+            .message {
                 font-size: 1.2rem;
+            }
+            
+            .dedication-card {
+                padding: 25px;
+            }
+            
+            .flower_wrapper {
+                height: 350px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
+    <div class="stars" id="stars"></div>
     
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">RosaCósmica</div>
-                <ul class="nav-links">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Galería</a></li>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
+    <div class="container">
+        <div class="dedication-card">
+            <h1>Para Ti 💛</h1>
+            <p class="message">Hay algo muy especial que quiero compartir contigo...</p>
+            <button class="btn" id="revealBtn">Descubrir</button>
         </div>
-    </header>
-    
-    <section class="hero">
-        <h1>Universo de Rosas</h1>
-        <p>Descubre la belleza cósmica de las rosas amarillas en un viaje interestelar</p>
-        <a href="#" class="btn">Explorar Galaxia</a>
-    </section>
-    
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">La Magia Cósmica de las Rosas</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">🌼</div>
-                    <h3>Belleza Estelar</h3>
-                    <p>Las rosas amarillas brillan con la intensidad de mil estrellas, iluminando el universo con su resplandor dorado.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Viaje Interestelar</h3>
-                    <p>Acompaña a estas rosas en un viaje a través de galaxias y nebulosas, esparciendo alegría por el cosmos.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌙</div>
-                    <h3>Noche Eterna</h3>
-                    <p>En la oscuridad del espacio, las rosas amarillas mantienen su brillo, recordándonos la luz que hay en la oscuridad.</p>
-                </div>
+        
+        <div class="flower-section" id="flowerSection">
+            <div class="flower_wrapper">
+                <div class="flower_stem" id="stem"></div>
+                
+                <div class="flower_center" id="center"></div>
+                
+                <div class="flower_petal flower_petal-1"></div>
+                <div class="flower_petal flower_petal-2"></div>
+                <div class="flower_petal flower_petal-3"></div>
+                <div class="flower_petal flower_petal-4"></div>
+                <div class="flower_petal flower_petal-5"></div>
+                <div class="flower_petal flower_petal-6"></div>
+                <div class="flower_petal flower_petal-7"></div>
+                <div class="flower_petal flower_petal-8"></div>
+                <div class="flower_petal flower_petal-9"></div>
+                <div class="flower_petal flower_petal-10"></div>
+                <div class="flower_petal flower_petal-11"></div>
+                <div class="flower_petal flower_petal-12"></div>
+                
+                <div class="flower_leaf flower_leaf-1"></div>
+                <div class="flower_leaf flower_leaf-2"></div>
+                
+                <div class="flower_light" style="left: 40px; bottom: 200px; animation: light-anim 4s infinite 0.5s;"></div>
+                <div class="flower_light" style="left: 100px; bottom: 180px; animation: light-anim 5s infinite 1s;"></div>
+                <div class="flower_light" style="left: 160px; bottom: 220px; animation: light-anim 4.5s infinite 1.5s;"></div>
+            </div>
+            
+            <div class="poem" id="poem">
+                <p>Tus ojos son el sol que ilumina mi día,<br>
+                como el amarillo de esta rosa, pura alegría.<br>
+                En cada pétalo guardo un susurro sincero,<br>
+                mi corazón late por ti, amor verdadero.</p>
             </div>
         </div>
-    </section>
-    
-    <section class="content-section">
-        <div class="container">
-            <h2 class="section-title">Galería Cósmica</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1597848212624-e9f0dee2c761?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rosa amarilla en el espacio">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1618662179736-6db6c47293d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Nebulosa rosa y amarilla">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1465156799763-7f0c11f7530c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rosa con fondo estelar">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Galaxia espiral">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">RosaCósmica</div>
-                <p>Explorando la belleza del universo a través de rosas amarillas</p>
-                <div class="social-links">
-                    <a href="#">🌌</a>
-                    <a href="#">🚀</a>
-                    <a href="#">🌠</a>
-                    <a href="#">🪐</a>
-                </div>
-                <p>&copy; 2023 - Universo de Rosas Amarillas</p>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <script>
-        // Crear partículas de rosas
-        document.addEventListener('DOMContentLoaded', function() {
-            const particlesContainer = document.getElementById('particles');
-            const numberOfParticles = 50;
+        // Crear estrellas de fondo
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDuration = Math.random() * 3 + 2 + 's';
+            starsContainer.appendChild(star);
+        }
+        
+        // Mostrar la flor y el poema
+        document.getElementById('revealBtn').addEventListener('click', function() {
+            document.getElementById('flowerSection').classList.add('show');
             
-            for (let i = 0; i < numberOfParticles; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.innerHTML = '🌼';
-                
-                // Posición aleatoria
-                const posX = Math.random() * 100;
-                const delay = Math.random() * 20;
-                
-                particle.style.left = `${posX}vw`;
-                particle.style.animationDelay = `${delay}s`;
-                
-                // Tamaño aleatorio
-                const size = Math.random() * 20 + 10;
-                particle.style.fontSize = `${size}px`;
-                
-                particlesContainer.appendChild(particle);
-            }
+            setTimeout(function() {
+                document.getElementById('stem').classList.add('grow-stem');
+            }, 500);
+            
+            setTimeout(function() {
+                document.getElementById('center').classList.add('show-center');
+            }, 1500);
+            
+            setTimeout(function() {
+                const petals = document.querySelectorAll('.flower_petal');
+                petals.forEach(petal => {
+                    petal.style.transition = 'all 1.5s ease-in-out';
+                    petal.style.opacity = '1';
+                });
+            }, 2500);
+            
+            setTimeout(function() {
+                const leaves = document.querySelectorAll('.flower_leaf');
+                leaves.forEach(leaf => {
+                    leaf.style.transition = 'all 1.5s ease-in-out';
+                    leaf.style.opacity = '1';
+                });
+            }, 3500);
+            
+            setTimeout(function() {
+                document.getElementById('poem').classList.add('reveal-poem');
+            }, 5000);
+            
+            // Ocultar el botón después de hacer clic
+            this.style.display = 'none';
         });
     </script>
 </body>
